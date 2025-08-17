@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 12:45:29 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/15 11:04:27 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/08/18 00:20:54 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ static void	reset_one_row(t_var *var, int *answer)
 	i = 0;
 	while (i++ < var->row_size)
 		answer[--var->pos] = 0;
-	var->pos--;
-	var->n = answer[var->pos] + 1;
+	var->n = answer[--var->pos] + 1;
 }
 
 static int	is_fullrow(int pos, int row_size)
