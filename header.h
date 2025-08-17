@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:57:49 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/13 13:56:44 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/08/18 00:14:12 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_var
 	int	clue_len;
 }		t_var;
 
-int		ft_strlen(char *str);
 int		arg_is_invalid(int argc, char *argv, t_var *var);
 int		**parse_clue(char *argv, t_var var);
 int		solve_puzzle(int *answer, t_var var);

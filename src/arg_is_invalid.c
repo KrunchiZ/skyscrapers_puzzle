@@ -6,11 +6,13 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:53:36 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/17 23:59:45 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/08/18 00:14:04 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+static int	ft_strlen(char *str);
 
 int	arg_is_invalid(int argc, char *argv, t_var *var)
 {
@@ -33,4 +35,14 @@ int	arg_is_invalid(int argc, char *argv, t_var *var)
 		i++;
 	}
 	return (false);
+}
+
+static int	ft_strlen(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (*str++)
+		len++;
+	return (len);
 }
