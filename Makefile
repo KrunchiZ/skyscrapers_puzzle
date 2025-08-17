@@ -1,4 +1,4 @@
-NAME	= rush-01
+NAME	= skyscrapers_puzzle_solver
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror -g3
 
@@ -19,7 +19,7 @@ bonus: all
 
 $(NAME): $(SRC)
 	@$(CC) $(CFLAGS) -I. $^ -o $(NAME)
-	@echo "Compiling Rush-01..."
+	@echo "Compiling $(NAME)..."
 
 fclean: clean
 	rm -f $(NAME)
