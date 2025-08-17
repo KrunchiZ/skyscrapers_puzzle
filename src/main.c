@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 10:59:53 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/13 23:54:59 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/08/18 00:30:02 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ int	main(int argc, char *argv[])
 	var = (t_var){0};
 	answer = NULL;
 	if (arg_is_invalid(argc, argv[1], &var))
-		write(STDOUT_FILENO, "Error\n", 6);
+		write(STDERR_FILENO, "Error\n", 6);
 	else
 	{
 		var.pos = 0;
 		answer = init_answer_array(var.ans_size);
 		var.clue = parse_clue(argv[1], var);
 		if (!var.clue || !answer)
-			write(STDOUT_FILENO, "Error\n", 6);
+			write(STDERR_FILENO, "Error\n", 6);
 		if (solve_puzzle(answer, var))
 			print_answer(answer, var);
 		else
-			write(STDOUT_FILENO, "Error\n", 6);
+			write(STDERR_FILENO, "Error\n", 6);
 	}
 	printf("\n%dx%d runtime: %.0f seconds.\n",
 		var.row_size, var.row_size, difftime(time(&end), start));
