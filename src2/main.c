@@ -6,27 +6,21 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 10:59:53 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 01:28:57 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 01:49:22 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-#include <stdio.h>
-#include <time.h>
-
-#define SIDE_NBR 4
 
 static int	*init_grid(char *argv);
 static void	print_grid(int **grid, int n);
-
-void		free_2darray(char **arr, int n);
-void		free_set(char **arr, int n);
 
 int	main(int argc, char *argv[])
 {
 	int		**grid;
 	int		**clue;
 	int		**set;
+	int		set_size;
 	int		n;
 
 	grid = NULL;
@@ -36,18 +30,17 @@ int	main(int argc, char *argv[])
 	{
 		grid = init_grid(argv[1], n);
 		clue = parse_clue(argv[1], clue_len, n);
-		set = get_permutations(n);
+		set_size = ft_factorial(n);
+		set = get_permutation(n, set_size);
 		if (!var.clue || !answer || !set)
 			write(STDERR_FILENO, "Error\n", 6);
-		else if (solve_puzzle(answer, var))
+		else if (solve_puzzle(grid, set, n))
 			print_grid(grid, n);
 		else
 			write(STDERR_FILENO, "Error\n", 6);
 	}
 	free_2darray(clue, SIDE_NBR);
-	free_2darray(grid, n);
-	free_set(set, n);
-	return (EXIT_SUCCESS);
+	return (free_2darray(grid, n), free_set(set, set_size), EXIT_SUCCESS);
 /*	time_t	start;
 	time_t	end;
 	time(&start);

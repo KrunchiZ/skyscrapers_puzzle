@@ -6,11 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 00:55:00 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 00:59:24 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 01:46:18 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define SIDE_NBR 4
+#include "header.h"
 
 static int	**init_clue(int row_size);
 

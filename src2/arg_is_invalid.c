@@ -6,13 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:53:36 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 00:40:32 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 01:44:48 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-int	ft_strlen(char *str);
 
 int	arg_is_invalid(int argc, char *argv, int *clue_len, int *n)
 {

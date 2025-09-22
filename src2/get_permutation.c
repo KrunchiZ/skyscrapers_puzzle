@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   get_permutation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 01:08:33 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 01:33:52 by kchiang          ###   ########.fr       */
+/*   Created: 2025/09/23 01:48:53 by kchiang           #+#    #+#             */
+/*   Updated: 2025/09/23 01:49:59 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	free_2darray(char **arr, int n)
+#include "header.h"
+
+int	**get_permutation(int n, int set_size)
 {
-	int	row;
-
-	if (arr)
-	{
-		row = 0;
-		while (row < n)
-			free(arr[row++]);
-	}
-	free(arr);
-	return ;
-}
-
-void	free_set(char **arr, int n)
-{
-	int	row;
-
-	if (arr)
-	{
-		row = 0;
-		while (row < n)
-			free(arr[row++]);
-	}
-	free(arr);
-	return ;
+	int	**set;
 }
