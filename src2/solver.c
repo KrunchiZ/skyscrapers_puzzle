@@ -6,54 +6,73 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:50:11 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/15 11:14:10 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 14:28:59 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static int	is_unique(t_var var, int *answer);
+static int	generate_grid(int *grid, int ***data, int *limit, int row);
+static int	set_is_valid(int *grid, int ***data, int *arr, int row);
 
-int	solve_puzzle(int *answer, t_var var)
+int	solve_puzzle(int *grid, int ***data, int n, int set_size);
 {
-	var.n = 1;
-	while (var.n <= var.row_size + 1 && var.pos < var.ans_size)
-	{
-		if (var.n <= var.row_size && is_unique(var, answer))
-		{
-			answer[var.pos++] = var.n++;
-			check_clue(&var, answer);
-		}
-		else
-			var.n++;
-		if (var.n > var.row_size && var.pos > 0)
-		{
-			answer[var.pos--] = 0;
-			var.n = answer[var.pos] + 1;
-		}
-		if (var.n > var.row_size && var.pos == 0)
-			return (false);
-	}
-	return (true);
+	int	arr[3];
+	int	starting_row;
+
+	starting_row = 0;
+	arr[GRID_SIZE] = n;
+	arr[SET_SIZE] = set_size;
+	return (generate_grid(grid, data, arr, starting_row));
 }
 
-static int	is_unique(t_var var, int *answer)
+static int	generate_grid(int *grid, int ***data, int *arr, int row)
 {
 	int	i;
 
-	i = var.pos;
-	while (i >= (var.pos / var.row_size * var.row_size))
+	if (row == arr[GRID_SIZE])
+		return (SUCCESS);
+	i = 0;
+	while (i < arr[SET_SIZE])
 	{
-		if (var.n == answer[i])
-			return (false);
-		i--;
+		arr[CURRENT] = i;
+		if (set_is_valid(grid, data, arr, row))
+		{
+			grid[row] = i;
+			if (generate_grid(grid, data, arr, row + 1) == SUCCESS)
+				return (SUCCESS);
+		}
+		i++;
 	}
-	i = var.pos;
-	while (i >= 0)
+	return (FAILURE);
+}
+
+static int	set_is_valid(int *grid, int ***data, int *arr, int row)
+{
+	if (row > 0 && col_has_dup(grid, data, arr, row))
+		return (false);
+	if (row > 0 && exceed_top_clue(grid, data, arr, row))
+		return (false);
+}
+
+static int	col_has_dup(int *grid, int ***data, int *arr, int row)
+{
+	int	i;
+	int	col;
+	int	**set;
+
+	set = data[SET];
+	i = 0;
+	while (i < row)
 	{
-		if (var.n == answer[i])
-			return (false);
-		i -= var.row_size;
+		col = 0;
+		while (col < arr[GRID_SIZE])
+		{
+			if (set[grid[i]][col] == set[arr[CURRENT]][col])
+				return (true);
+			col++;
+		}
+		i++;
 	}
-	return (true);
+	return (false);
 }

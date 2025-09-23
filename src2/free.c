@@ -6,9 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 01:08:33 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 01:33:52 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 13:40:45 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "header.h"
 
 void	free_2darray(char **arr, int n)
 {

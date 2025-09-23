@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 00:19:01 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/18 00:12:41 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 14:36:41 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,32 @@
 static int	top_is_bad(int *answer, int *clue, t_var var);
 static int	bottom_is_bad(int *answer, int *clue, t_var var);
 
-int	exceed_top_clue(int *answer, t_var var)
+int	exceed_top_clue(int *grid, int ***data, int *arr, int row)
 {
 	int	max;
 	int	seen;
 	int	i;
+	int col;
 
-	seen = 0;
-	max = 0;
-	i = (var.pos - 1) % var.row_size;
-	while (i < var.pos)
+	col = 0;
+	while (col < arr[GRID_SIZE])
 	{
-		if (answer[i] > max)
+		seen = 0;
+		max = 0;
+		i = 0;
+		while (i < row)
 		{
-			seen++;
-			max = answer[i];
+			if (data[SET][grid[i]][col] > max)
+			{
+				seen++;
+				max = data[SET][grid[i]][col];
+			}
+			i++;
 		}
-		i += var.row_size;
+		if (seen > data[CLUE][0][col])
+			return (true);
+		col++;
 	}
-	if (seen > var.clue[0][(var.pos - 1) % var.row_size])
-		return (true);
 	return (false);
 }
 
