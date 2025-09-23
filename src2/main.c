@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 10:59:53 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 01:49:22 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 13:13:33 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,31 @@ static void	print_grid(int **grid, int n);
 
 int	main(int argc, char *argv[])
 {
-	int		**grid;
-	int		**clue;
-	int		**set;
+	int		*grid;
+	int		**data[2];
 	int		set_size;
 	int		n;
 
 	grid = NULL;
+	data[CLUE] = NULL;
+	data[SET] = NULL;
 	if (arg_is_invalid(argc, argv[1], &n))
 		write(STDERR_FILENO, "Error\n", 6);
 	else
 	{
-		grid = init_grid(argv[1], n);
-		clue = parse_clue(argv[1], clue_len, n);
 		set_size = ft_factorial(n);
-		set = get_permutation(n, set_size);
-		if (!var.clue || !answer || !set)
+		grid = init_grid(argv[1], n);
+		data[CLUE] = parse_clue(argv[1], clue_len, n);
+		data[SET] = set_permutation(n, set_size);
+		if (!grid || !data[CLUE] || !data[SET])
 			write(STDERR_FILENO, "Error\n", 6);
 		else if (solve_puzzle(grid, set, n))
 			print_grid(grid, n);
 		else
 			write(STDERR_FILENO, "Error\n", 6);
 	}
-	free_2darray(clue, SIDE_NBR);
-	return (free_2darray(grid, n), free_set(set, set_size), EXIT_SUCCESS);
+	free_2darray(data[CLUE], SIDE_NBR);
+	return (free(grid), free_set(data[SET], set_size), EXIT_SUCCESS);
 /*	time_t	start;
 	time_t	end;
 	time(&start);
@@ -52,13 +53,13 @@ int	main(int argc, char *argv[])
 static int	**init_grid(char *argv, int n)
 {
 	int	i;
-	int	**grid;
+	int	*grid;
 
-	grid = (int **)malloc(n * sizeof(int *));
+	grid = malloc(n * sizeof(int));
 	if (!grid)
 		return (NULL);
 	i = 0;
-	while (i < size)
+	while (i < n)
 		grid[i++] = NULL;
 	return (grid);
 }

@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:57:49 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 01:50:15 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 13:13:23 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include <time.h>
 
 #define SIDE_NBR 4
+
+#define CLUE	0
+#define SET		1
 
 /* STUFF FOR SRC VERSION
 typedef struct s_var
@@ -48,5 +51,6 @@ void	free_set(char **arr, int n);
 int		**get_permutation(int n);
 int		ft_factorial(int nb);
 int		ft_strlen(char *str);
+void	generate_comb(int **set, int *comb, int *limit, int col);
 
 #endif
