@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 00:55:00 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 11:39:00 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 16:10:14 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	**init_clue(int n)
 	if (!clue)
 		return (NULL);
 	row = 0;
-	while (row < n)
+	while (row < SIDE_NBR)
 	{
 		clue[row] = malloc(n * sizeof(int));
 		if (!clue[row])
