@@ -20,13 +20,15 @@ SRC2	= \
 
 .PHONY = all clean fclean re bonus
 
-vpath %.c $(SRC2_DIR)
+vpath %.c $(SRC_DIR)
 
 all: $(NAME)
 
-bonus: all
+bonus: $(addprefix $(SRC2_DIR)/, $(SRC2))
+	@$(CC) $(CFLAGS) -I. $^ -o $(NAME)_bonus
+	@echo "Compiling $(NAME)_bonus..."
 
-$(NAME): $(SRC2)
+$(NAME): $(SRC)
 	@$(CC) $(CFLAGS) -I. $^ -o $(NAME)
 	@echo "Compiling $(NAME)..."
 

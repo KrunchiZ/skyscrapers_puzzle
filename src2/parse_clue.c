@@ -6,11 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 00:55:00 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 16:10:14 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:43:56 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "header_bonus.h"
 
 static int	**init_clue(int row_size);
 

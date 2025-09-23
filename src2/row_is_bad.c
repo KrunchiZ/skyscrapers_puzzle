@@ -6,11 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 00:19:01 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 16:38:58 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:44:04 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "header_bonus.h"
 
 static int	left_is_bad(int *grid, int ***data, int *arr, int row);
 static int	right_is_bad(int *grid, int ***data, int *arr, int row);

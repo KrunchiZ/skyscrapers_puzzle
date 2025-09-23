@@ -6,11 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 13:12:18 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 17:29:00 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:43:32 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "header_bonus.h"
 
 static int	value_is_unique(int *comb, int value, int col);
 static void	intcpy(int **set, int *comb, int n);

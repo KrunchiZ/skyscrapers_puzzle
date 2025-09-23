@@ -6,11 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:50:11 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 17:31:20 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:44:20 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "header_bonus.h"
 
 static int	generate_grid(int *grid, int ***data, int *limit, int row);
 static int	set_is_valid(int *grid, int ***data, int *arr, int row);

@@ -6,11 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 01:48:53 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 16:47:13 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:44:13 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "header_bonus.h"
 
 static void	reset_comb(int *comb, int n);
 static int	**init_set(int n, int set_size);

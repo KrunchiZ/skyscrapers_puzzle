@@ -6,11 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 10:59:53 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 17:31:55 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:43:46 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "header_bonus.h"
 
 static void	init_grid_data(int **grid, int ***data);
 static int	*init_grid(int n);
