@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 00:19:01 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 16:39:07 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:05:18 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static int	top_is_bad(int *grid, int ***data, int *arr, int row)
 {
 	int	max;
 	int	seen;
+	int	col;
 	int	i;
 
 	col = 0;
@@ -56,6 +57,7 @@ static int	bottom_is_bad(int *grid, int ***data, int *arr, int row)
 {
 	int	max;
 	int	seen;
+	int	col;
 	int	i;
 
 	col = 0;

@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 13:12:18 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 13:19:52 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:29:00 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	generate_comb(int **set, int *comb, int n, int col)
 
 	if (col == n)
 	{
-		intcpy(set, comb, n]);
+		intcpy(set, comb, n);
 		return ;
 	}
-	value = 0;
-	while (value < n)
+	value = 1;
+	while (value <= n)
 	{
 		if (value_is_unique(comb, value, col))
 		{
@@ -59,7 +59,7 @@ static int	value_is_unique(int *comb, int value, int col)
 	int	i;
 
 	i = 0;
-	while (i <= col)
+	while (i < col)
 	{
 		if (comb[i++] == value)
 			return (false);

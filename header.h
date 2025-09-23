@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:57:49 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 16:39:40 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 16:52:18 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ int		col_is_bad(int *answer, t_var var);
 /* STUFF FOR SRC2 VERSION */
 int		ft_strlen(char *str);
 int		ft_factorial(int nb);
-void	free_2darray(char **arr, int n);
-void	free_set(char **arr, int n);
-
+void	free_2darray(int **arr, int n);
+void	free_set(int **arr, int n);
+int		**parse_clue(char *argv, int clue_len, int n);
 int		**set_permutation(int n, int set_size);
-void	generate_comb(int **set, int *comb, int *limit, int col);
+void	generate_comb(int **set, int *comb, int n, int col);
 
 int		solve_puzzle(int *grid, int ***data, int n, int set_size);
 int		row_is_bad(int *grid, int ***data, int *arr, int row);

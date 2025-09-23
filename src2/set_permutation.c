@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 01:48:53 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 13:25:23 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 16:47:13 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	**set_permutation(int n, int set_size)
 {
 	int	**set;
 	int	*comb;
-	int	limit[2];
 
 	comb = malloc(n * sizeof(int));
 	if (!comb)

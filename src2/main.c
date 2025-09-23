@@ -6,32 +6,35 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 10:59:53 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 14:01:16 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:31:55 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static int	*init_grid(char *argv);
+static void	init_grid_data(int **grid, int ***data);
+static int	*init_grid(int n);
 static void	print_grid(int *grid, int **set, int n);
 static int	arg_is_invalid(int argc, char *argv, int *clue_len, int *n);
 
 int	main(int argc, char *argv[])
 {
+	time_t	start;
+	time_t	end;
 	int		*grid;
 	int		**data[2];
 	int		set_size;
+	int		clue_len;
 	int		n;
 
-	grid = NULL;
-	data[CLUE] = NULL;
-	data[SET] = NULL;
-	if (arg_is_invalid(argc, argv[1], &n))
+	time(&start);
+	init_grid_data(&grid, data);
+	if (arg_is_invalid(argc, argv[1], &clue_len, &n))
 		write(STDERR_FILENO, "Error\n", 6);
 	else
 	{
 		set_size = ft_factorial(n);
-		grid = init_grid(argv[1], n);
+		grid = init_grid(n);
 		data[CLUE] = parse_clue(argv[1], clue_len, n);
 		data[SET] = set_permutation(n, set_size);
 		if (!grid || !data[CLUE] || !data[SET])
@@ -40,15 +43,19 @@ int	main(int argc, char *argv[])
 			print_grid(grid, data[SET], n);
 		else
 			write(STDERR_FILENO, "Error\n", 6);
+		free_set(data[SET], set_size);
 	}
-	free_2darray(data[CLUE], SIDE_NBR);
-	return (free(grid), free_set(data[SET], set_size), EXIT_SUCCESS);
-/*	time_t	start;
-	time_t	end;
-	time(&start);
 	printf("\n%dx%d runtime: %.0f seconds.\n",
 		n, n, difftime(time(&end), start));
-*/
+	return (free(grid), free_2darray(data[CLUE], SIDE_NBR), EXIT_SUCCESS);
+}
+
+static void	init_grid_data(int **grid, int ***data)
+{
+	*grid = NULL;
+	data[CLUE] = NULL;
+	data[SET] = NULL;
+	return ;
 }
 
 static void	print_grid(int *grid, int **set, int n)
@@ -97,7 +104,7 @@ static int	arg_is_invalid(int argc, char *argv, int *clue_len, int *n)
 	return (false);
 }
 
-static int	**init_grid(char *argv, int n)
+static int	*init_grid(int n)
 {
 	int	i;
 	int	*grid;
@@ -107,6 +114,6 @@ static int	**init_grid(char *argv, int n)
 		return (NULL);
 	i = 0;
 	while (i < n)
-		grid[i++] = NULL;
+		grid[i++] = 0;
 	return (grid);
 }

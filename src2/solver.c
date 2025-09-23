@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:50:11 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 16:37:57 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/09/23 17:31:20 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	set_is_valid(int *grid, int ***data, int *arr, int row);
 static int	col_has_dup(int *grid, int ***data, int *arr, int row);
 static int	exceed_top_clue(int *grid, int ***data, int *arr, int row);
 
-int	solve_puzzle(int *grid, int ***data, int n, int set_size);
+int	solve_puzzle(int *grid, int ***data, int n, int set_size)
 {
 	int	arr[3];
 	int	starting_row;
@@ -38,7 +38,7 @@ static int	generate_grid(int *grid, int ***data, int *arr, int row)
 	while (i < arr[SET_SIZE])
 	{
 		grid[row] = i;
-		if (set_is_valid(grid, data, arr, row))
+		if (set_is_valid(grid, data, arr, row)
 			&& (generate_grid(grid, data, arr, row + 1) == SUCCESS))
 			return (SUCCESS);
 		else
@@ -88,7 +88,7 @@ static int	exceed_top_clue(int *grid, int ***data, int *arr, int row)
 	int	max;
 	int	seen;
 	int	i;
-	int col;
+	int	col;
 
 	col = 0;
 	while (col < arr[GRID_SIZE])
