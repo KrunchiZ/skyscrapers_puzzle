@@ -3,7 +3,7 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror -g3
 
 SRC_DIR		= src
-SRC2_DIR	= src2
+SRC2_DIR	= src_bonus
 
 SRC		= \
 		  arg_is_invalid.c	check_clue.c	\
@@ -20,20 +20,18 @@ SRC2	= \
 
 .PHONY = all clean fclean re bonus
 
-vpath %.c $(SRC_DIR)
-
 all: $(NAME)
 
 bonus: $(addprefix $(SRC2_DIR)/, $(SRC2))
 	@$(CC) $(CFLAGS) -I. $^ -o $(NAME)_bonus
 	@echo "Compiling $(NAME)_bonus..."
 
-$(NAME): $(SRC)
+$(NAME): $(addprefix $(SRC_DIR)/, $(SRC))
 	@$(CC) $(CFLAGS) -I. $^ -o $(NAME)
 	@echo "Compiling $(NAME)..."
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME)_bonus
 
 clean:
 
