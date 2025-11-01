@@ -6,11 +6,12 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:50:11 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/15 11:14:10 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/11/01 11:02:09 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdbool.h>
 
 static int	is_unique(t_var var, int *answer);
 

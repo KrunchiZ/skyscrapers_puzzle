@@ -6,11 +6,12 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:53:36 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/18 00:14:04 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/11/01 10:59:27 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdbool.h>
 
 static int	ft_strlen(char *str);
 
