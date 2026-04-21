@@ -1,6 +1,6 @@
 NAME	= skyscrapers_puzzle_solver
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g3
+CFLAGS	= -Wall -Wextra -Werror -Ofast -g0
 
 SRC_DIR		= src
 SRC2_DIR	= src_bonus
