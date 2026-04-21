@@ -6,13 +6,15 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 10:59:53 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/18 00:30:02 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/11/01 10:58:08 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 #include <stdio.h>
 #include <time.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 static int	*init_answer_array(int ans_size);
 static void	print_answer(int *answer, t_var var);

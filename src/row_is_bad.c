@@ -6,11 +6,12 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 00:19:01 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/18 00:11:53 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/11/01 11:00:34 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdbool.h>
 
 static int	left_is_bad(int *answer, int *clue, t_var var);
 static int	right_is_bad(int *answer, int *clue, t_var var);

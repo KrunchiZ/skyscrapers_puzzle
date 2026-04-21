@@ -6,11 +6,12 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 00:55:00 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/13 14:20:32 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/11/01 11:01:13 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdlib.h>
 
 static int	**init_clue(int row_size);
 

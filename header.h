@@ -6,18 +6,12 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:57:49 by kchiang           #+#    #+#             */
-/*   Updated: 2025/09/23 17:44:54 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/11/01 10:59:25 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
-
-# include <stdbool.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <time.h>
 
 /* STUFF FOR SRC VERSION */
 typedef struct s_var
