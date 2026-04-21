@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   header_presolve.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 15:57:49 by kchiang           #+#    #+#             */
-/*   Updated: 2026/04/22 00:11:43 by kchiang          ###   ########.fr       */
+/*   Updated: 2026/04/22 03:18:51 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 /* STUFF FOR SRC VERSION */
 typedef struct s_var
 {
+	int	mask[81];
+	int	**clue;
 	int	row_size;
 	int	ans_size;
 	int	n;
 	int	pos;
-	int	**clue;
-	int	*mask;
 	int	clue_len;
 }		t_var;
 
