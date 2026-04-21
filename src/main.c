@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 10:59:53 by kchiang           #+#    #+#             */
-/*   Updated: 2026/04/22 03:18:19 by kchiang          ###   ########.fr       */
+/*   Updated: 2026/04/22 03:49:10 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	main(int argc, char *argv[])
 		var.clue = parse_clue(argv[1], var);
 		if (!var.clue || !answer)
 			write(STDERR_FILENO, "Error\n", 6);
-		pre_solve(answer, &var);
 		if (solve_puzzle(answer, var))
 			print_answer(answer, var);
 		else
