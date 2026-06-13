@@ -24,18 +24,18 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -I. $^ -o $(NAME)
-	@echo "Compiling $(GREEN)$(NAME)$(WHITE)..."
+	@printf "Compiling $(GREEN)$(NAME)$(WHITE)...\n"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
-	@echo "Compiling $(CYAN)$@$(WHITE)..."
+	@printf "Compiling $(CYAN)$@$(WHITE)...\n"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Removing $(GREEN)$(NAME)$(WHITE)..."
+	@printf "Removing $(GREEN)$(NAME)$(WHITE)...\n"
 
 clean:
 	@rm -f $(OBJS)
-	@echo "Removing $(CYAN)object$(WHITE) files..."
+	@printf "Removing $(CYAN)object$(WHITE) files...\n"
 
 re: fclean all
